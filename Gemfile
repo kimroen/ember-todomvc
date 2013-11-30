@@ -45,3 +45,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'ember-rails', github: 'emberjs/ember-rails'
+gem 'ember-source', '1.2.0'
