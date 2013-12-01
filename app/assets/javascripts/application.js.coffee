@@ -7,4 +7,6 @@
 #= require app
 @App = Ember.Application.create()
 
+App.ApplicationAdapter = DS.FixtureAdapter.extend()
+
 #= require_tree .
