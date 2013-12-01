@@ -24,3 +24,25 @@ App.TodosController = Ember.ArrayController.extend
       @set 'newTitle', ''
 
       todo.save()
+
+    clearCompleted: ->
+      completed = @filterBy 'isCompleted', true
+      completed.invoke 'deleteRecord'
+      completed.invoke 'save'
+
+  hasCompleted: (->
+    @get('completed') > 0
+  ).property 'completed'
+
+  completed: (->
+    @filterBy('isCompleted', true).get 'length'
+  ).property('@each.isCompleted')
+
+  allAreDone: ((key, value) ->
+    if value == undefined
+      !!@get('length') and @everyBy('isCompleted', true)
+    else
+      @setEach('isCompleted', value)
+      @invoke 'save'
+      value
+  ).property '@each.isCompleted'
