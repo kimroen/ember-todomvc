@@ -22,7 +22,7 @@ App.TodoController = Ember.ObjectController.extend
     acceptChanges: ->
       @set 'isEditing', false
 
-      if Ember.isEmpty @get 'model.title'
+      if Ember.isEmpty(@get 'model.title')
         @send 'removeTodo'
       else
         @get('model').save()
