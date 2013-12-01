@@ -26,3 +26,8 @@ App.TodoController = Ember.ObjectController.extend
         @send 'removeTodo'
       else
         @get('model').save()
+
+    removeTodo: ->
+      todo = @get 'model'
+      todo.deleteRecord()
+      todo.save()
