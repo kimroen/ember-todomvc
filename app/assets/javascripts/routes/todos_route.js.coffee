@@ -13,3 +13,11 @@ App.TodosActiveRoute = Ember.Route.extend
 
   renderTemplate: (controller) ->
     @render 'todos/index', controller: controller
+
+App.TodosCompletedRoute = Ember.Route.extend
+  model: ->
+    @store.filter 'todo', (todo) ->
+      todo.get 'isCompleted'
+
+  renderTemplate: (controller) ->
+    @render 'todos/index', controller: controller
