@@ -3,6 +3,7 @@
 To set up this on your local machine, open terminal and run these commands in the root folder:
 
 ```
+gem install bundler
 bundle
 rake db:setup
 ```
