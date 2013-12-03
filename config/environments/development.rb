@@ -24,6 +24,7 @@ EmberTodomvc::Application.configure do
 
   # Ember-related
   config.ember.app_name = "App"
+  config.ember.variant = :development
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
