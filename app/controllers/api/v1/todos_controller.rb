@@ -1,6 +1,7 @@
 module Api
   module V1
     class TodosController < ApplicationController
+      before_filter :restrict_access
       respond_to :json
 
       def index
@@ -26,11 +27,16 @@ module Api
         respond_with @todo.destroy, location: nil
       end
 
-      private
+    private
 
-        def todo_params
-          params.require(:todo).permit(:title, :is_completed)
-        end
+      def todo_params
+        params.require(:todo).permit(:title, :is_completed)
+      end
+
+      def restrict_access
+        api_key = ApiKey.find_by_access_token(params[:access_token])
+        head :unauthorized unless api_key
+      end
     end
   end
 end
