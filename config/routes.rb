@@ -6,7 +6,7 @@ EmberTodomvc::Application.routes.draw do
   namespace :api do
     # /api/... Api::
     namespace :v1 do
-      resources :todo
+      resources :todos
     end
   end
 
