@@ -21,6 +21,11 @@ module Api
         respond_with @todo.update(todo_params), location: nil
       end
 
+      def destroy
+        @todo = Todo.find(params[:id])
+        respond_with @todo.destroy, location: nil
+      end
+
       private
 
         def todo_params
