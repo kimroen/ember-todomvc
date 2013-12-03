@@ -7,9 +7,9 @@ bundle
 rake db:setup
 ```
 
-This will install all dependencies and set up the database
+This will install all dependencies and set up the database.
 
-After these, run `rails server` to run the server
+After these, run `rails server` to run the server. Rails will now be running on `http://localhost:3000/`.
 
 
 ## After changes
