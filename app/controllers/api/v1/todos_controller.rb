@@ -8,20 +8,24 @@ module Api
       end
 
       def show
-        respond_with Todo.find(params[:id])
+        @todo = Todo.find(params[:id])
+        respond_with @todo
       end
 
       def create
-        respond_with Todo.create(params[:todo])
+        respond_with Todo.create(todo_params), location: nil
       end
 
       def update
-        respond_with Todo.update(params[:id], params[:todo])
+        @todo = Todo.find(params[:id])
+        respond_with @todo.update(todo_params), location: nil
       end
 
-      def destroy
-        respond_with Todo.destroy(params[:id])
-      end
+      private
+
+        def todo_params
+          params.require(:todo).permit(:title, :is_completed)
+        end
     end
   end
 end
