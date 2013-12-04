@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SessionControllerTest < ActionController::TestCase
+class Api::V1::SessionControllerTest < ActionController::TestCase
   test "authenticate with username" do
     pw = 'secret'
     larry = User.create!(username: 'larry', email: 'larry@example.com', name: 'Larry Moulders', password: pw, password_confirmation: pw)
