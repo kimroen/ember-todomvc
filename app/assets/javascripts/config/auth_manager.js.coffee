@@ -1,4 +1,4 @@
-AuthManager = Ember.Object.extend
+window.AuthManager = Ember.Object.extend
 
   # Load the current user if the cookies exist and is valid
   init: ->
