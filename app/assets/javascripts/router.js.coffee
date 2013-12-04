@@ -8,6 +8,7 @@ App.Router.map ->
     @route 'new'
   @resource 'sessions', ->
     @route 'new'
+  @route 'top_secret'
 
 App.Router.reopen
   location: 'history'
