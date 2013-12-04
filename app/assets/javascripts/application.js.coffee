@@ -5,6 +5,7 @@
 #= require ember-data
 #= require localstorage-adapter
 #= require jquery.cookie
+#= require bootstrap.min
 #= require_self
 #= require app
 window.App = Ember.Application.create()
