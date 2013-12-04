@@ -6,6 +6,6 @@
 #= require localstorage-adapter
 #= require_self
 #= require app
-@App = Ember.Application.create()
+window.App = Ember.Application.create()
 
 #= require_tree .
