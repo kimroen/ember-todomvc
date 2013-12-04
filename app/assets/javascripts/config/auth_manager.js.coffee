@@ -19,7 +19,7 @@ window.AuthManager = Ember.Object.extend
       headers:
         'Authorization': 'Bearer ' + accessToken
 
-    user = User.find userId
+    user = App.__container__.lookup("store:main").find 'user', userId
     @set 'apiKey', App.ApiKey.create
       accessToken: accessToken
       user: user
