@@ -1,7 +1,7 @@
 module Api
   module V1
     class TodosController < ApplicationController
-      before_filter :restrict_access
+      #before_filter :ensure_authenticated_user
       respond_to :json
 
       def index
