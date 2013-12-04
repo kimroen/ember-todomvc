@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   protected
 
   # Renders a 401 status code if the current user is not authorized
