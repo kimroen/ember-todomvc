@@ -23,6 +23,7 @@
         {{#link-to 'users.new' tagName='li'}}{{link-to "Register" 'users.new'}}{{/link-to}}
       {{/if}}
       </ul>
+      {{#if session.isAuthenticated}}<p class="navbar-text navbar-right">Hi, {{session.user.name}}! Good to see you.</p>{{/if}}
     </div>
 
   </nav>
