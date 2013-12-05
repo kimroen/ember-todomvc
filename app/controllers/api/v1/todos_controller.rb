@@ -1,6 +1,7 @@
 module Api
   module V1
     class TodosController < ApplicationController
+      #before_filter :ensure_authenticated_user
       respond_to :json
 
       def index
@@ -26,11 +27,17 @@ module Api
         respond_with @todo.destroy, location: nil
       end
 
-      private
+    private
 
-        def todo_params
-          params.require(:todo).permit(:title, :is_completed)
+      def todo_params
+        params.require(:todo).permit(:title, :is_completed)
+      end
+
+      def restrict_access
+        authenticate_or_request_with_http_token do |token, options|
+          ApiKey.exists?(access_token: token)
         end
+      end
     end
   end
 end

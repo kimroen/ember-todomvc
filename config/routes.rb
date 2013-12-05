@@ -6,6 +6,8 @@ EmberTodomvc::Application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :todos
+      resources :users, except: [:new, :edit, :destroy]
+      post 'session' => 'session#create'
     end
   end
 

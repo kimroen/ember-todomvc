@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  isCompleted: false
-  id: 
+keys:
+  title: Find my keys
+  is_completed: false
 
-two:
-  title: MyString
-  isCompleted: false
-  id: 
+lipstick:
+  title: Kill the guy with the hammer
+  is_completed: true
