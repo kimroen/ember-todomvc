@@ -6,8 +6,13 @@ module Api
         if user && user.authenticate(params[:password])
           render json: user.session_api_key, status: 201
         else
-          render json: {}, status: 401
+          render json: {error: "Wrong username or password"}, status: 401
         end
+      end
+      def default_serializer_options
+        {
+          root: false
+        }
       end
     end
   end
