@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/emberjs/ember-rails.git
-  revision: ed5666d3ee30d4c70f3b53effbe317144c3c0200
+  revision: dcc6d39f73ce5d870231fce8830d6485c9038f77
   specs:
     ember-rails (0.14.1)
       active_model_serializers
@@ -64,7 +64,7 @@ GEM
     execjs (2.0.2)
     handlebars-source (1.1.1)
     hike (1.2.3)
-    i18n (0.6.5)
+    i18n (0.6.9)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -120,7 +120,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    uglifier (2.3.1)
+    uglifier (2.3.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
 
