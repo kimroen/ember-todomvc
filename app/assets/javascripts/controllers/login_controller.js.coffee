@@ -14,8 +14,5 @@ App.LoginController = Ember.Controller.extend Ember.SimpleAuth.LoginControllerMi
 
   actions:
     loginFailed: (xhr, status, error) ->
-      console.log xhr
-      console.log status
-      console.log error
       response = JSON.parse xhr.responseText
       @set 'errorMessage', response.error
