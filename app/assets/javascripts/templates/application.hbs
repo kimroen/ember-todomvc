@@ -17,7 +17,6 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}
-        <li><a href="#" class="navbar-link">{{session.user.email}}</a></li>
         <li><a href="#" class="navbar-link" {{action 'logout'}}><span class="glyphicon glyphicon-thumbs-down"></span> Log out</a></li>
       {{else}}
         {{#link-to 'login' tagName='li'}}{{#link-to 'login'}}<span class="glyphicon glyphicon-thumbs-up"></span> Log in{{/link-to}}{{/link-to}}
