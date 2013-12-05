@@ -443,7 +443,6 @@ Ember.SimpleAuth.LoginControllerMixin = Ember.Mixin.create({
         this.set('password', undefined);
         var requestOptions = this.tokenRequestOptions(data.identification, data.password, data.client_id, data.client_secret);
         Ember.$.ajax(Ember.SimpleAuth.serverTokenEndpoint, requestOptions).then(function(response) {
-          console.log(response);
           Ember.run(function() {
             _this.get('session').setup(response);
             _this.send('loginSucceeded');

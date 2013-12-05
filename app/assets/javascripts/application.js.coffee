@@ -13,11 +13,6 @@ Ember.Application.initializer
   name: 'authentication'
 
   initialize: (container, application) ->
-    Ember.SimpleAuth.setup container, application,
-      routeAfterLogin: 'todos'
-      routeAfterLogout: 'todos'
-      serverTokenEndpoint: 'api/v1/session'
-
     # Customize the session so that it handles the additional authenticated user
     Ember.SimpleAuth.Session.reopen
       init: ->
@@ -46,6 +41,12 @@ Ember.Application.initializer
         unless Ember.isEmpty userId
           @set 'user', container.lookup('store:main').find 'user', userId
       ).property 'userId'
+
+    # Custom options and things
+    Ember.SimpleAuth.setup container, application,
+      routeAfterLogin: 'todos'
+      routeAfterLogout: 'todos'
+      serverTokenEndpoint: 'api/v1/session'
 
 window.App = Ember.Application.create()
 
