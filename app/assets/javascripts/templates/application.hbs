@@ -16,12 +16,12 @@
         {{#link-to 'top_secret' tagName='li'}}{{#link-to 'top_secret'}}Top Secret{{/link-to}}{{/link-to}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      {{#if isAuthenticated}}
-        <li><a href="#" class="navbar-link">{{currentUser.email}}</a></li>
+      {{#if session.isAuthenticated}}
+        <li><a href="#" class="navbar-link">{{session.user.email}}</a></li>
         <li><a href="#" class="navbar-link" {{action 'logout'}}><span class="glyphicon glyphicon-thumbs-down"></span> Log out</a></li>
       {{else}}
-        <li>{{#link-to 'sessions.new'}}<span class="glyphicon glyphicon-thumbs-up"></span> Log in{{/link-to}}</li>
-        <li>{{#link-to 'users.new'}}Register{{/link-to}}</li>
+        {{#link-to 'login' tagName='li'}}{{#link-to 'login'}}<span class="glyphicon glyphicon-thumbs-up"></span> Log in{{/link-to}}{{/link-to}}
+        {{#link-to 'users.new' tagName='li'}}{{link-to "Register" 'users.new'}}{{/link-to}}
       {{/if}}
       </ul>
     </div>
