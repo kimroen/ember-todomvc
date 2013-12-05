@@ -6,8 +6,7 @@ App.Router.map ->
     @route 'completed'
   @resource 'users', ->
     @route 'new'
-  @resource 'sessions', ->
-    @route 'new'
+  @route 'login'
   @route 'top_secret'
 
 App.Router.reopen
