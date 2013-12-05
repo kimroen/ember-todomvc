@@ -18,9 +18,9 @@
       <ul class="nav navbar-nav navbar-right">
       {{#if isAuthenticated}}
         <li><a href="#" class="navbar-link">{{currentUser.email}}</a></li>
-        <li><a href="#" class="navbar-link" {{action 'logout'}}>Log out</a></li>
+        <li><a href="#" class="navbar-link" {{action 'logout'}}><span class="glyphicon glyphicon-thumbs-down"></span> Log out</a></li>
       {{else}}
-        <li>{{#link-to 'sessions.new'}}Log in{{/link-to}}</li>
+        <li>{{#link-to 'sessions.new'}}<span class="glyphicon glyphicon-thumbs-up"></span> Log in{{/link-to}}</li>
         <li>{{#link-to 'users.new'}}Register{{/link-to}}</li>
       {{/if}}
       </ul>
