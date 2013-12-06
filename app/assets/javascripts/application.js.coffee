@@ -5,7 +5,7 @@
 #= require ember-data
 #= require localstorage-adapter
 #= require ember-simple-auth
-#= require bootstrap.min
+#= require bootstrap
 #= require_self
 #= require app
 
