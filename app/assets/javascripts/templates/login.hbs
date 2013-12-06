@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <h1>Login</h1>
+    {{#if errorMessage}}<div class="alert alert-danger"><strong>Oh no!</strong> {{errorMessage}}</div>{{/if}}
     <form role="form" {{action 'login' on="submit"}}>
       <div {{bind-attr class=":form-group errorMessage:has-error"}}>
         <label for="identification" class="control-label">Username or Email</label>
@@ -10,7 +11,6 @@
         <label for="password" class="control-label">Password</label>
         {{input type="password" class="form-control" id="password" value=password placeholder="Password"}}
       </div>
-      {{#if errorMessage}}<p class="text-danger">{{errorMessage}}</p>{{/if}}
       <button type="submit" class="btn btn-primary pull-right">Log in</button>
     </form>
   </div>
