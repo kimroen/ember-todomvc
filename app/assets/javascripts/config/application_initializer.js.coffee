@@ -36,3 +36,4 @@ Ember.Application.initializer
       routeAfterLogin: 'todos'
       routeAfterLogout: 'todos'
       serverTokenEndpoint: 'api/v1/session'
+
