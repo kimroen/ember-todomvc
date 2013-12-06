@@ -1,4 +1,3 @@
-#= require ./store
 #= require_tree ./models
 #= require_tree ./config
 #= require_tree ./controllers
