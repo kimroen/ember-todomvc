@@ -36,13 +36,13 @@ App.TodosController = Ember.ArrayController.extend
 
   completed: (->
     @filterBy('isCompleted', true).get 'length'
-  ).property('@each.isCompleted')
+  ).property '@each.isCompleted'
 
   allAreDone: ((key, value) ->
     if value == undefined
-      !!@get('length') and @everyBy('isCompleted', true)
+      !!@get('length') and @everyBy 'isCompleted', true
     else
-      @setEach('isCompleted', value)
+      @setEach 'isCompleted', value
       @invoke 'save'
       value
   ).property '@each.isCompleted'
