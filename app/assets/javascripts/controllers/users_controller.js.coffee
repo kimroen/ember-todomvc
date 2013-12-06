@@ -1,10 +1,10 @@
 App.UsersNewController = Ember.ObjectController.extend
   actions:
     createUser: ->
-      router = @get 'target'
-      data = @getProperties 'name', 'email', 'username', 'password', 'password_confirmation'
       user = @get 'model'
+      user.save()
 
+      ###
       Ember.$.post('/api/v1/users', user: data, (results) =>
         # @get('session').setup
           # access_token: results.api_key.access_token
@@ -14,3 +14,4 @@ App.UsersNewController = Ember.ObjectController.extend
         if jqxhr.status == 422
           errs = JSON.parse jqxhr.responseText
           user.set 'errors', errs.errors
+      ###
