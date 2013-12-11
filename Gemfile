@@ -9,6 +9,5 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'active_model_serializers'
 gem 'ember-rails', github: 'emberjs/ember-rails'
 gem 'ember-source', '1.2.0'

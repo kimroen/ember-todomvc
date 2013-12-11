@@ -1,6 +1,12 @@
 App.ApplicationRoute = Ember.Route.extend Ember.SimpleAuth.ApplicationRouteMixin,
+
   actions:
-    error: ->
-      # If all else fails...
+
+    logout: ->
       @get('session').destroy()
-      @transitionTo 'login'
+      App.reset()
+
+    # error: ->
+      # If all else fails...
+      # @get('session').destroy()
+      # @transitionTo 'login'

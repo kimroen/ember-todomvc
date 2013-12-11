@@ -128,7 +128,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
   bcrypt-ruby (~> 3.1.2)
   coffee-rails (~> 4.0.0)
   ember-rails!

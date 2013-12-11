@@ -34,7 +34,7 @@ Ember.Application.initializer
     # Custom options and things
     Ember.SimpleAuth.setup container, application,
       routeAfterLogin: 'todos'
-      routeAfterLogout: 'todos'
+      routeAfterLogout: 'login'
       serverTokenEndpoint: 'api/v1/session'
       # serverTokenEndpoint: 'http://de1.pam.as:3002/api/v1/session'
       # crossOriginWhitelist: ['http://de1.pam.as:3002']

@@ -1,5 +1,7 @@
 class ApiKeySerializer < ActiveModel::Serializer
-  attributes :id, :access_token
+  attributes :access_token, :user_id
 
-  has_one :user, embed: :id
+  def user_id
+    object.user.id
+  end
 end
