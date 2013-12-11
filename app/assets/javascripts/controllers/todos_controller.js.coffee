@@ -15,7 +15,7 @@ App.TodosController = Ember.ArrayController.extend
       title = @get 'newTitle'
       return unless title.trim()
 
-      # Create the new Todo model
+      # Create the new Todo record
       todo = @store.createRecord 'todo',
         title: title
         isCompleted: false
