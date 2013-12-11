@@ -1,7 +1,5 @@
 App.TodosRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
   model: ->
-    current_user = @get('session').user
-    console.log current_user
     @store.find 'todo'
 
 App.TodosIndexRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin,
