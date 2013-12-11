@@ -1,28 +1,31 @@
 module Api
   module V1
     class TodosController < ApplicationController
+      before_filter :ensure_authenticated_user
       respond_to :json
 
       def index
-        respond_with Todo.all
+        @todos = current_user.todos
+        respond_with @todos
       end
 
       def show
-        @todo = Todo.find(params[:id])
-        respond_with @todo
+        @todos = current_user.todos.find(params[:id])
+        respond_with @todos
       end
 
       def create
-        respond_with Todo.create(todo_params), location: nil
+        @todo = current_user.todos.create(todo_params)
+        respond_with @todo, location: nil
       end
 
       def update
-        @todo = Todo.find(params[:id])
+        @todo = current_user.todos.find(params[:id])
         respond_with @todo.update(todo_params), location: nil
       end
 
       def destroy
-        @todo = Todo.find(params[:id])
+        @todo = current_user.todos.find(params[:id])
         respond_with @todo.destroy, location: nil
       end
 
