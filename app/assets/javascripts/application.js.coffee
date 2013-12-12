@@ -3,8 +3,13 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require localstorage-adapter
+#= require ember-simple-auth
+#= require bootstrap
 #= require_self
 #= require app
-@App = Ember.Application.create()
+
+window.App = Ember.Application.create
+  LOG_TRANSITIONS: true
 
 #= require_tree .
